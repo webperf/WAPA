@@ -1,0 +1,14 @@
+{
+  "name": "WAPA",
+  "description": "Web Application Performance Analyzer",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "esprima": "http://github.com/ariya/esprima/tarball/master",
+    "htmlparser": "1.x",
+    "cssom": ">= 0.2.5",
+    "readdirp": ">= 0.2.4",
+    "underscore": ">= 1.4.3",
+    "jessie": "*"
+  }
+}

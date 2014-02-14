@@ -1,0 +1,149 @@
+diff --git a/src/node_modules/cssom/lib/parse.js b/src/node_modules/cssom/lib/parse.js
+index 223017b..3bdff51 100644
+--- a/src/node_modules/cssom/lib/parse.js
++++ b/src/node_modules/cssom/lib/parse.js
+@@ -9,6 +9,9 @@ var CSSOM = {};
+ CSSOM.parse = function parse(token) {
+ 
+ 	var i = 0;
++	var line = 1;
++	var column = 1;
++    var skiped;
+ 
+ 	/**
+ 	  "before-selector" or
+@@ -57,14 +60,16 @@ CSSOM.parse = function parse(token) {
+ 		throw error;
+ 	};
+ 
+-	for (var character; character = token.charAt(i); i++) {
++	for (var character; character = token.charAt(i); i++, column++) {
+ 
+ 		switch (character) {
+ 
++		case "\n":
++			line++;
++			column = 0;
+ 		case " ":
+ 		case "\t":
+ 		case "\r":
+-		case "\n":
+ 		case "\f":
+ 			if (SIGNIFICANT_WHITESPACE[state]) {
+ 				buffer += character;
+@@ -78,6 +83,7 @@ CSSOM.parse = function parse(token) {
+ 				parseError('Unmatched "');
+ 			}
+ 			buffer += token.slice(i, index);
++			column += index - 1 - i;
+ 			i = index - 1;
+ 			switch (state) {
+ 				case 'before-value':
+@@ -95,6 +101,7 @@ CSSOM.parse = function parse(token) {
+ 				parseError("Unmatched '");
+ 			}
+ 			buffer += token.slice(i, index);
++			column += index - 1 - i;
+ 			i = index - 1;
+ 			switch (state) {
+ 				case 'before-value':
+@@ -109,11 +116,15 @@ CSSOM.parse = function parse(token) {
+ 		// Comment
+ 		case "/":
+ 			if (token.charAt(i + 1) === "*") {
++				column += 2;
+ 				i += 2;
+ 				index = token.indexOf("*/", i);
+ 				if (index === -1) {
+ 					parseError("Missing */");
+ 				} else {
++                    skipped = token.substring(i, index).split('\n');
++                    column = skipped.length === 1 ? column + skipped[0].length + 1 : skipped[skipped.length - 1].length + 1;
++                    line += skipped.length - 1;
+ 					i = index + 1;
+ 				}
+ 			} else {
+@@ -130,19 +141,26 @@ CSSOM.parse = function parse(token) {
+ 			if (token.indexOf("@media", i) === i) {
+ 				state = "atBlock";
+ 				mediaRule = new CSSOM.CSSMediaRule;
++				mediaRule.__line = line;
++				mediaRule.__column = column;
+ 				mediaRule.__starts = i;
++				column += "media".length;
+ 				i += "media".length;
+ 				buffer = "";
+ 				break;
+ 			} else if (token.indexOf("@import", i) === i) {
+ 				state = "importRule-begin";
++				column += "import".length;
+ 				i += "import".length;
+ 				buffer += "@import";
+ 				break;
+ 			} else if (token.indexOf("@font-face", i) === i) {
+ 				state = "fontFaceRule-begin";
++				column += "font-face".length;
+ 				i += "font-face".length;
+ 				fontFaceRule = new CSSOM.CSSFontFaceRule;
++				fontFaceRule.__line = line;
++				fontFaceRule.__column = column;
+ 				fontFaceRule.__starts = i;
+ 				buffer = "";
+ 				break;
+@@ -152,8 +170,11 @@ CSSOM.parse = function parse(token) {
+ 				if (matchKeyframes && matchKeyframes.index === i) {
+ 					state = "keyframesRule-begin";
+ 					keyframesRule = new CSSOM.CSSKeyframesRule;
++					keyframesRule.__line = line;
++					keyframesRule.__column = column;
+ 					keyframesRule.__starts = i;
+ 					keyframesRule._vendorPrefix = matchKeyframes[1]; // Will come out as undefined if no prefix was found
++					column += matchKeyframes[0].length - 1;
+ 					i += matchKeyframes[0].length - 1;
+ 					buffer = "";
+ 					break;
+@@ -167,6 +188,8 @@ CSSOM.parse = function parse(token) {
+ 		case "{":
+ 			if (state === "selector" || state === "atRule") {
+ 				styleRule.selectorText = buffer.trim();
++				styleRule.style.__line = line;
++				styleRule.style.__column = column;
+ 				styleRule.style.__starts = i;
+ 				buffer = "";
+ 				state = "before-name";
+@@ -196,6 +219,8 @@ CSSOM.parse = function parse(token) {
+ 			} else if (state === "keyframeRule-begin") {
+ 				styleRule = new CSSOM.CSSKeyframeRule;
+ 				styleRule.keyText = buffer.trim();
++				styleRule.__line = line;
++				styleRule.__column = column;
+ 				styleRule.__starts = i;
+ 				buffer = "";
+ 				state = "before-name";
+@@ -219,6 +244,7 @@ CSSOM.parse = function parse(token) {
+ 					parseError('Unmatched "("');
+ 				}
+ 				buffer += token.slice(i, index + 1);
++				column += index - i;
+ 				i = index;
+ 			} else {
+ 				buffer += character;
+@@ -228,6 +254,7 @@ CSSOM.parse = function parse(token) {
+ 		case "!":
+ 			if (state === "value" && token.indexOf("!important", i) === i) {
+ 				priority = "important";
++				column += "important".length;
+ 				i += "important".length;
+ 			} else {
+ 				buffer += character;
+@@ -303,6 +330,8 @@ CSSOM.parse = function parse(token) {
+ 				case "before-selector":
+ 					state = "selector";
+ 					styleRule = new CSSOM.CSSStyleRule;
++					styleRule.__line = line;
++					styleRule.__column = column;
+ 					styleRule.__starts = i;
+ 					break;
+ 				case "before-name":
+
+
