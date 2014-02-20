@@ -2,6 +2,7 @@ Web Application Performance Analyzer
 ====================================
 
 WAPA is a HTML5 application performance tuning tool, which statically analyzes HTML5 application¡¯s source code and provides recommendations for performance optimization. 
+
 To use WAPA, please perform the following steps.
  
 1.  Download the WAPA£¬unzip it, and you will get a folder named WAPA-master.
@@ -24,4 +25,5 @@ Command ¡°npm root ¡± can show the installation path where these downloaded modu
        Such as :  ¡°C:\Users\lich\WAPA-master\server\app.js¡± )
 
 7.  Open a browser and enter ¡°http://localhost:8888/¡±, you can see the homepage of WAPA.
+fff
  
