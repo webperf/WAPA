@@ -7,13 +7,11 @@ To use WAPA, please perform the following steps.
  
 1.  Download the WAPA using github or just download the WAPA.zip from WAPA homepage, move or unzip all the WAPA files(analyzers,bin,LICENSE,pathches,server,shared,tests,main,js,package.json,README.md and wapa.js)into a folder named WAPA-master( or any other name you want).
 
-2.  Download the stable version of node.js (node-v0.8.14) at:
+2.  Download the stable version of node.js (node-v0.8.14)at: 
+32bit : http://nodejs.org/dist/v0.8.14/node-v0.8.14-x86.msi.
+64bit : http://nodejs.org/dist/v0.8.14/x64/node-v0.8.14-x64.msi  
 
-           32 bit :  http://nodejs.org/dist/v0.8.14/node-v0.8.14-x86.msi. 
-
-           64 bit :  http://nodejs.org/dist/v0.8.14/x64/ node-v0.8.14-x64.msi  
-
-      Double click the node-v0.8.14-x86.msi and install it, for more download and installation information of node.js, you can find at  http://nodejs.org/download/
+      Double click the node-v0.8.14-xxxx.msi and install it, for more download and installation information of node.js, you can find at  http://nodejs.org/download/
 
 3.  Download the 11 related modules:  cssom, esprima, htmlparser, jessie, msexcel-builder, readdirp, underscore, express, temporary, unzip, wrench. Using command "npm install module name" to implement this task.
 
