@@ -17,13 +17,11 @@ To use WAPA, please perform the following steps.
 
 3.  Download the 11 related modules:  cssom, esprima, htmlparser, jessie, msexcel-builder, readdirp, underscore, express, temporary, unzip, wrench. Using command "npm install module name" to implement this task.
 
-For Example:
+    For Example:
 
-            npm install express.   //this command install the express module
+            npm install express  //this command install the express module
 
-Command "npm root" can show the installation path where these downloaded modules are stored.
-
-4.  Create a folder "node_modules" under WAPA-master folder, and copy the first seven modules (cssom£¬esprima, htmlparser£¬jessie£¬msexcel-builder£¬readdirp and underscore) that downloaded at step 3 into this new folder.
+4.  Create a folder "node_modules" under WAPA-master folder, and copy the first seven modules (cssom£¬esprima, htmlparser£¬jessie£¬msexcel-builder£¬readdirp and underscore) that downloaded at step 3 into this new folder. Command "npm root" can show the path where these downloaded modules are stored.
 
 5.  Create a folder "node_modules" under WAPA-master\server folder, and copy the remaining four modules (express, temporary, unzip and wrench) that downloaded at step 3 into this new folder.
 
@@ -31,6 +29,6 @@ Command "npm root" can show the installation path where these downloaded modules
 
        Such as :  "C:\Users\lich\WAPA-master\server\app.js" )
 
-7. Open a browser and enter "http://localhost:8888/", the homepage of WAPA will be shown.
+7.  Open a browser and enter "http://localhost:8888/", the homepage of WAPA will be shown.
 
  
