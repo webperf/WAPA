@@ -30,9 +30,9 @@ To use WAPA, please perform the following steps.
 
     Open a browser and enter "http://localhost:8888/", the homepage of WAPA will be shown.
 
-7.  Alternatively, Using command to access WAPA is OK. 
+7.  Alternatively, Using command to access WAPA is OK: 
 
-       node  YOU-WAPA-ROOT\main.js PROJECT-ROOT
+            node  YOU-WAPA-ROOT\main.js  PROJECT-ROOT
 
     PROJECT-ROOT is the root directory of the project that you want to analyze. The result is stored as WapaAnalyzeResult.xlsx under the PROJECT_ROOT.
 
