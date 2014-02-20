@@ -23,7 +23,6 @@ To use WAPA, please perform the following steps.
 5.  Create a new folder "node_modules" under WAPA-master\server folder, and copy the remaining four modules (express, temporary, unzip and wrench) that downloaded at step 3 into this new folder.
 
     
-    
     There is two methods to access WAPA: step 6 uses browser to access WAPA, step 7 uses command.      
  
 6.  Using  command  "node YOU-WAPA-ROOT\server\app.js" to start the server of WAPA. YOU-WAPA-ROOT is the root directory of the WAPA files.       
