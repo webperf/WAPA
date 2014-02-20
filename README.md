@@ -18,9 +18,9 @@ To use WAPA, please perform the following steps.
 
             npm install express  //this command install the express module
 
-4.  Create a new folder "node_modules" under the WAPA-master folder or the folder that you move the WAPA files into, and copy the first seven modules (cssom, esprima,htmlparser, jessiw, msexcel-builder, readdirp and underscore) that downloaded at step 3 into this new folder. Command "npm root" can show the path where these downloaded modules are stored.
+4.  Create a new folder "node_modules" under the WAPA-master folder or the folder that you move the WAPA files into, and copy the first seven modules (cssom, esprima, htmlparser, jessie, msexcel-builder, readdirp and underscore) that downloaded at step 3 into this new folder. Command "npm root" can show the path where these downloaded modules are stored.
 
-5.  Create a new folder "node_modules" under WAPA-master\server folder, and copy the remaining four modules (express, temporary, unzip and wrench) that downloaded at stthis new folder.
+5.  Create a new folder "node_modules" under WAPA-master\server folder, and copy the remaining four modules (express, temporary, unzip and wrench) that downloaded at step 3 into this new folder.
 
     
     
