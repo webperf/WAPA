@@ -28,7 +28,7 @@ To use WAPA, please perform the following steps.
  
 6.  Using  command  "node YOU-WAPA-ROOT\server\app.js" to start the server of WAPA. YOU-WAPA-ROOT is the root directory of the WAPA files.       
 
-Open a browser and enter "http://localhost:8888/", the homepage of WAPA will be shown.
+    Open a browser and enter "http://localhost:8888/", the homepage of WAPA will be shown.
 
 7.  Alternatively, Using command to access WAPA is OK. 
 
