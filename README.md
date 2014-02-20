@@ -20,9 +20,11 @@ To use WAPA, please perform the following steps.
 
 4.  Create a new folder "node_modules" under the WAPA-master folder or the folder that you move the WAPA files into, and copy the first seven modules (cssom, esprima,htmlparser, jessiw, msexcel-builder, readdirp and underscore) that downloaded at step 3 into this new folder. Command "npm root" can show the path where these downloaded modules are stored.
 
-5.  Create a new folder "node_modules" under WAPA-master\server folder, and copy the remaining four modules (express, temporary, unzip and wrench) that downloaded at step 3 into this new folder.
+5.  Create a new folder "node_modules" under WAPA-master\server folder, and copy the remaining four modules (express, temporary, unzip and wrench) that downloaded at stthis new folder.
 
-There is 2 method to access WAPA:        
+    
+    
+    There is 2 method to access WAPA:        
  
 6.  Using  command  "node YOU-WAPA-ROOT\server\app.js" to start the server of WAPA. YOU-WAPA-ROOT is the root directory of the WAPA files.       
 
