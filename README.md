@@ -24,7 +24,7 @@ To use WAPA, please perform the following steps.
 
     
     
-    There is 2 method to access WAPA:        
+    There is two methods to access WAPA: step 6 uses browser to access WAPA, step 7 uses command.      
  
 6.  Using  command  "node YOU-WAPA-ROOT\server\app.js" to start the server of WAPA. YOU-WAPA-ROOT is the root directory of the WAPA files.       
 
