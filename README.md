@@ -24,7 +24,7 @@ To use WAPA, please perform the following steps.
 
 6.  Using  command  "node youpath\WAPA-master\server\app.js" to start the server of WAPA. yourpath is the path where WAPA-master is stored. Such as :  
                
-              node C:\Users\lich\WAPA-master\server\app.js
+              node C:\Users\lich\WAPA-master\server\app.js 
 
 7.  Open a browser and enter "http://localhost:8888/", the homepage of WAPA will be shown.
 
