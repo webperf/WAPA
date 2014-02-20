@@ -24,6 +24,6 @@ Command ¡°npm root ¡± can show the installation path where these downloaded modu
 6.  Using  command  ¡°node youpath\WAPA-master\server\app.js¡± to start the server of WAPA.   ( your path is the path where WAPA-master is stored. 
        Such as :  ¡°C:\Users\lich\WAPA-master\server\app.js¡± )
 
-7.  Open a browser and enter ¡°http://localhost:8888/¡±, you can see the homepage of WAPA.
-fff
+7.  Open a browser and enter ¡°http://localhost:8888/¡±, you can see the homepage of WAPA.ff
+
  
