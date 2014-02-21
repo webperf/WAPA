@@ -5,7 +5,7 @@ WAPA is a HTML5 application performance tuning tool, which statically analyzes H
 
 To use WAPA, please perform the following steps.
  
-1.  Download the WAPA using github or just download the WAPA.zip from WAPA homepage, move or unzip all the WAPA files(analyzers, bin, LICENSE, pathches, server, shared, tests, main,js, package.json, README.md and wapa.js) into a folder named WAPA-master (or any other name you want).
+1.  Download the WAPA using github or just download the WAPA.zip from WAPA homepage, move or unzip all the WAPA files(analyzers, bin, LICENSE, pathches, server, shared, tests, main.js, package.json, README.md and wapa.js) into a folder named WAPA-master (or any other name you want).
 
 2.  Download the stable version of node.js (node-v0.8.14)at: 
 32bit : http://nodejs.org/dist/v0.8.14/node-v0.8.14-x86.msi.
