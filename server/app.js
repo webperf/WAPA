@@ -7,9 +7,9 @@ var Tempdir = require('temporary/lib/dir');
 var Tempfile = require('temporary/lib/file');
 var wrench = require('wrench');
 var http = require('http');
-var WAPA = require('../wapa/src/wapa').WAPA;
+var WAPA = require('../wapa').WAPA;
 var express = require('express');
-var _ = require('../wapa/src/node_modules/underscore/underscore');
+var _ = require('../node_modules/underscore/underscore');
 var util = require('util');
 var app = express();
 
